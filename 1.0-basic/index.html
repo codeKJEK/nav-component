@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.0 basic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <!-- visible when focused -->
+        <a href="#main-content" class="skip-nav">skip to main content</a>
+        <!-- max width 1025px -->
+        <div class="nav-container">
+            <!-- logo & menu button -->
+            <div class="nav-header">
+                <a href="#">company name</a>
+                <button class="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="nav-list"><span class="menu-switch">open</span> menu</button>
+            </div>
+            <!-- list default hidden -->
+            <ul id="nav-list" class="link-list" hidden>
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
+                <li><a href="#">link 3</a></li>    
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
