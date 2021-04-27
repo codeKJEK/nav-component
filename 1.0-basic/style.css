@@ -9,6 +9,10 @@
 }
 
 /* ===== basic ===== */
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -108,6 +112,22 @@ ul {
   padding: var(--mid-rem);
   display: block;
   border-bottom: solid 1px var(--accent-color);
+}
+
+#main-content section {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#main-content section div {
+    padding: var(--mid-rem);
+}
+
+footer {
+    text-align: center;
 }
 
 @media screen and (min-width: 1025px) {

@@ -1,6 +1,7 @@
+const navList = document.getElementById("nav-list");
+const menuSwitch = document.querySelector(".menu-switch");
 // ===== content loaded =====
 window.addEventListener('DOMContentLoaded', () => {
-    const navList = document.getElementById("nav-list");
     if (window.innerWidth > 1025) {
         navList.hidden = false;
     }
@@ -8,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // ===== window resize =====
 window.addEventListener("resize", () => {
-    const navList = document.getElementById("nav-list");
     if (window.innerWidth > 1025) {
         navList.hidden = false;
     } else if (window.innerWidth < 1025) {
@@ -21,7 +21,6 @@ const menuBtn = document.querySelector(".menu-btn");
 menuBtn.addEventListener("click", (event) => {
     const ariaControls = event.currentTarget.getAttribute("aria-controls");
     const controlledAria = document.getElementById(ariaControls);
-    const menuSwitch = document.querySelector(".menu-switch");
     if (controlledAria.hidden) {
         controlledAria.hidden = false;
         event.currentTarget.setAttribute("aria-expanded", "true");
@@ -31,4 +30,17 @@ menuBtn.addEventListener("click", (event) => {
         event.currentTarget.setAttribute("aria-expanded", "false");
         menuSwitch.innerHTML = "open";
     }
+});
+
+const mainNav = document.querySelector(".main-nav");
+const navLinks = mainNav.querySelectorAll("a");
+navLinks.forEach(element => {
+    console.log(element);
+    element.addEventListener("click", () => {
+        if (window.innerWidth < 1025) {
+            navList.hidden = true;
+            menuSwitch.innerHTML = "open";
+            menuBtn.setAttribute("aria-expanded", "false");
+        }
+    })
 });
